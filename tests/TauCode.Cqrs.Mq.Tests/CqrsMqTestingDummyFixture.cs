@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace TauCode.Cqrs.Mq.Testing
+namespace TauCode.Cqrs.Mq.Tests
 {
     [TestFixture]
     public class CqrsMqTestingDummyFixture
