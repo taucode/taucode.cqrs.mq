@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TauCode.Cqrs.Mq</id>
+    <version>1.0.0.0-dev-2020-01-29-09-45</version>
+    <authors>TauCode</authors>
+    <owners>TauCode</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/taucode/taucode.cqrs.mq</projectUrl>
+    <description>MQ support for CQRS features</description>
+    <releaseNotes>
+      Initial version
+    </releaseNotes>
+    <tags>taucode cqrs mq</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\LICENSE.txt" target="" />
+    <file src="..\src\TauCode.Cqrs.Mq\bin\Release\netstandard2.0\TauCode.Cqrs.Mq.dll" target="lib\netstandard2.0" />
+    <file src="..\src\TauCode.Cqrs.Mq\bin\Release\netstandard2.0\TauCode.Cqrs.Mq.pdb" target="lib\netstandard2.0" />
+  </files>
+</package>
