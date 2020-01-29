@@ -14,6 +14,9 @@
     </releaseNotes>
     <tags>taucode cqrs mq</tags>
     <dependencies>
+      <dependency id="Serilog" version="2.9.0" />
+      <dependency id="TauCode.Cqrs" version="1.0.0-dev-2019-12-22-00-45" />
+      <dependency id="TauCode.Mq" version="1.0.0-dev-2019-12-29-16-05" />
     </dependencies>
   </metadata>
   <files>
