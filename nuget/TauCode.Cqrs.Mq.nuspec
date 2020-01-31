@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Cqrs.Mq</id>
-    <version>1.0.0.0-dev-2020-01-29-09-45</version>
+    <version>1.0.0.0-dev-2020-01-31-13-40</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
