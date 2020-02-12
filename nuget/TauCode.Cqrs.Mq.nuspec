@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Cqrs.Mq</id>
-    <version>1.0.0.0-dev-2020-01-31-13-40</version>
+    <version>1.0.0.0-dev-2020-02-12-18-32</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,13 +10,13 @@
     <projectUrl>https://github.com/taucode/taucode.cqrs.mq</projectUrl>
     <description>MQ support for CQRS features</description>
     <releaseNotes>
-      Initial version
+      Updated references.
     </releaseNotes>
     <tags>taucode cqrs mq</tags>
     <dependencies>
       <dependency id="Serilog" version="2.9.0" />
       <dependency id="TauCode.Cqrs" version="1.0.0-dev-2019-12-22-00-45" />
-      <dependency id="TauCode.Mq" version="1.0.0-dev-2019-12-29-16-05" />
+      <dependency id="TauCode.Mq" version="1.0.0-dev-2020-02-12-17-54" />
     </dependencies>
   </metadata>
   <files>
