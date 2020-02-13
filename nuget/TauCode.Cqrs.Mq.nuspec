@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Cqrs.Mq</id>
-    <version>1.0.0.0-dev-2020-02-12-18-32</version>
+    <version>1.0.0.0-dev-2020-02-13-20-40</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,7 +16,7 @@
     <dependencies>
       <dependency id="Serilog" version="2.9.0" />
       <dependency id="TauCode.Cqrs" version="1.0.0-dev-2019-12-22-00-45" />
-      <dependency id="TauCode.Mq" version="1.0.0-dev-2020-02-12-17-54" />
+      <dependency id="TauCode.Mq" version="1.0.0-dev-2020-02-13-19-06" />
     </dependencies>
   </metadata>
   <files>
