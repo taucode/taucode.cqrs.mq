@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Cqrs.Mq</id>
-    <version>1.0.0.0-dev-2020-02-13-20-40</version>
+    <version>1.0.0.0-dev-2020-03-14-21-29</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/taucode/taucode.cqrs.mq</projectUrl>
     <description>MQ support for CQRS features</description>
     <releaseNotes>
-      Updated references.
+      Migrating to Azure DevOps.
     </releaseNotes>
     <tags>taucode cqrs mq</tags>
     <dependencies>
