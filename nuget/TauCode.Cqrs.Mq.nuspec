@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TauCode.Cqrs.Mq</id>
-    <version>1.0.0.0-dev-2020-02-13-20-40</version>
+    <version>1.0.0.0-dev-2020-03-16-07-54</version>
     <authors>TauCode</authors>
     <owners>TauCode</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,18 +10,20 @@
     <projectUrl>https://github.com/taucode/taucode.cqrs.mq</projectUrl>
     <description>MQ support for CQRS features</description>
     <releaseNotes>
-      Updated references.
+      Migrating to Azure DevOps.
     </releaseNotes>
     <tags>taucode cqrs mq</tags>
     <dependencies>
-      <dependency id="Serilog" version="2.9.0" />
-      <dependency id="TauCode.Cqrs" version="1.0.0-dev-2019-12-22-00-45" />
-      <dependency id="TauCode.Mq" version="1.0.0-dev-2020-02-13-19-06" />
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Serilog" version="2.9.0" />
+        <dependency id="TauCode.Cqrs" version="1.0.0-dev-2020-03-16-00-23" />
+        <dependency id="TauCode.Mq" version="1.0.0-dev-2020-03-16-00-35" />
+      </group>
     </dependencies>
   </metadata>
   <files>
     <file src="..\LICENSE.txt" target="" />
-    <file src="..\src\TauCode.Cqrs.Mq\bin\Release\netstandard2.0\TauCode.Cqrs.Mq.dll" target="lib\netstandard2.0" />
-    <file src="..\src\TauCode.Cqrs.Mq\bin\Release\netstandard2.0\TauCode.Cqrs.Mq.pdb" target="lib\netstandard2.0" />
+    <file src="..\src\TauCode.Cqrs.Mq\bin\Release\netstandard2.1\TauCode.Cqrs.Mq.dll" target="lib\netstandard2.1" />
+    <file src="..\src\TauCode.Cqrs.Mq\bin\Release\netstandard2.1\TauCode.Cqrs.Mq.pdb" target="lib\netstandard2.1" />
   </files>
 </package>
