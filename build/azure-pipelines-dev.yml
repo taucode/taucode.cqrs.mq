@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 trigger:
-- develop
+- dev
 
 pool:
   vmImage: 'windows-latest'
@@ -13,6 +13,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  packageName: '_set_by_task_'
+  nuspecName: '_set_by_task_'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -33,13 +35,33 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $a = cmd /r dir /b nuget\*.nuspec
+      $echo_string = "##vso[task.setvariable variable=nuspecName]$a"
+      echo $echo_string
+      Write-Host "nuspecName is:"
+      Write-Host $(nuspecName)
+
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: 'nuget\TauCode.Cqrs.Mq.nuspec'
+    packagesToPack: 'nuget\$(nuspecName)'
     versioningScheme: 'off'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $a = cmd /r dir /b $(Build.ArtifactStagingDirectory)\*.nupkg
+      $echo_string = "##vso[task.setvariable variable=packageName]$a"
+      echo $echo_string
+      Write-Host "packageName is:"
+      Write-Host $(packageName)
 
 - task: NuGetCommand@2
   inputs:
     command: 'custom'
-    arguments: 'push $(Build.ArtifactStagingDirectory)\TauCode.Cqrs.Mq.1.0.0-dev-2020-03-16-07-54.nupkg -ApiKey $(NUGET_API_KEY) -Source https://api.nuget.org/v3/index.json'
+    arguments: 'push $(Build.ArtifactStagingDirectory)\$(packageName) -ApiKey az_dummy -Source "taucode"'
