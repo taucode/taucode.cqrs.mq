@@ -6,8 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.9.0" />
-    <PackageReference Include="TauCode.Cqrs" Version="1.0.0-dev-2020-03-16-00-23" />
-    <PackageReference Include="TauCode.Mq" Version="1.0.0-dev-2020-03-16-00-35" />
+    <PackageReference Include="TauCode.Cqrs" Version="1.0.1" />
+    <PackageReference Include="TauCode.Mq" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

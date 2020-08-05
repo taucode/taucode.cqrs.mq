@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="taucode" value="https://pkgs.dev.azure.com/taucode/_packaging/taucode/nuget/v3/index.json" />
+  </packageSources>
+</configuration>
