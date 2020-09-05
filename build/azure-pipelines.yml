@@ -51,17 +51,8 @@ steps:
     packagesToPack: 'nuget\$(nuspecName)'
     versioningScheme: 'off'
 
-- task: PowerShell@2
+- task: PublishBuildArtifacts@1
   inputs:
-    targetType: 'inline'
-    script: |
-      $a = cmd /r dir /b $(Build.ArtifactStagingDirectory)\*.nupkg
-      $echo_string = "##vso[task.setvariable variable=packageName]$a"
-      echo $echo_string
-      Write-Host "packageName is:"
-      Write-Host $(packageName)
-
-- task: NuGetCommand@2
-  inputs:
-    command: 'custom'
-    arguments: 'push $(Build.ArtifactStagingDirectory)\$(packageName) -ApiKey $(NUGET_API_KEY) -Source https://api.nuget.org/v3/index.json'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
