@@ -47,7 +47,7 @@ namespace TauCode.Cqrs.Mq
                 var genericTypeDefinition = baseType.GetGenericTypeDefinition();
                 if (genericTypeDefinition != typeof(DomainEventConverterBase<,>))
                 {
-                    throw new ArgumentException("Wrong base type's generic type definition", nameof(nestedConverter));
+                    throw new ArgumentException("Wrong base type's generic type definition.", nameof(nestedConverter));
                 }
 
                 var domainEventType = baseType.GetGenericArguments().First();

@@ -8,24 +8,15 @@ using TauCode.Mq;
 
 namespace TauCode.Cqrs.Mq
 {
-    // todo clean
     public abstract class DomainEventAwareCommandHandler<TCommand> : ICommandHandler<TCommand> where TCommand : ICommand
     {
         private class AllEventCatcher : IDomainEventSubscriber<IDomainEvent>
         {
-            //private readonly IMessagePublisher _messagePublisher;
-            //private readonly IDomainEventConverter _domainEventConverter;
-
             private readonly DomainEventAwareCommandHandler<TCommand> _owner;
 
-            public AllEventCatcher(/*IMessagePublisher messagePublisher, IDomainEventConverter domainEventConverter*/
-                DomainEventAwareCommandHandler<TCommand> owner)
+            public AllEventCatcher(DomainEventAwareCommandHandler<TCommand> owner)
             {
                 _owner = owner;
-
-                //_messagePublisher = messagePublisher ?? throw new ArgumentNullException(nameof(messagePublisher));
-                //_domainEventConverter =
-                //    domainEventConverter ?? throw new ArgumentNullException(nameof(domainEventConverter));
             }
 
             public void HandleEvent(IDomainEvent domainEvent)
@@ -48,16 +39,10 @@ namespace TauCode.Cqrs.Mq
                     {
                         _owner.MessagePublisher.Publish(message, topic);
                     }
-
-                    
-
-                    //var message = _domainEventConverter.Convert(domainEvent);
-                    //_messagePublisher.Publish(message);
-
                 }
                 catch (Exception ex)
                 {
-                    Log.Logger.Error(ex, "Error occured while handling domain event.");
+                    Log.Logger.Error(ex, "Error occurred while handling domain event.");
                 }
             }
         }
@@ -86,7 +71,7 @@ namespace TauCode.Cqrs.Mq
                 throw new ArgumentNullException(nameof(command));
             }
 
-            var catcher = new AllEventCatcher(/*this.MessagePublisher, this.DomainEventConverter*/ this);
+            var catcher = new AllEventCatcher(this);
             DomainEventPublisher.Current.Subscribe(catcher);
 
             try
@@ -106,7 +91,7 @@ namespace TauCode.Cqrs.Mq
                 throw new ArgumentNullException(nameof(command));
             }
 
-            var catcher = new AllEventCatcher(/*this.MessagePublisher, this.DomainEventConverter*/ this);
+            var catcher = new AllEventCatcher(this);
             DomainEventPublisher.Current.Subscribe(catcher);
 
             try

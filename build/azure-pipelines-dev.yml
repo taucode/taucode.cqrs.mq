@@ -21,7 +21,10 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'config'
+    nugetConfigPath: 'nuget.config'
 
 - task: VSBuild@1
   inputs:
@@ -64,4 +67,4 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'custom'
-    arguments: 'push $(Build.ArtifactStagingDirectory)\$(packageName) -ApiKey az_dummy -Source "taucode"'
+    arguments: 'push $(Build.ArtifactStagingDirectory)\$(packageName) -ApiKey az_dummy -Source "TauCode"'
