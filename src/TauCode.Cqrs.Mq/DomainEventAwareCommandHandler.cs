@@ -8,24 +8,15 @@ using TauCode.Mq;
 
 namespace TauCode.Cqrs.Mq
 {
-    // todo clean
     public abstract class DomainEventAwareCommandHandler<TCommand> : ICommandHandler<TCommand> where TCommand : ICommand
     {
         private class AllEventCatcher : IDomainEventSubscriber<IDomainEvent>
         {
-            //private readonly IMessagePublisher _messagePublisher;
-            //private readonly IDomainEventConverter _domainEventConverter;
-
             private readonly DomainEventAwareCommandHandler<TCommand> _owner;
 
-            public AllEventCatcher(/*IMessagePublisher messagePublisher, IDomainEventConverter domainEventConverter*/
-                DomainEventAwareCommandHandler<TCommand> owner)
+            public AllEventCatcher(DomainEventAwareCommandHandler<TCommand> owner)
             {
                 _owner = owner;
-
-                //_messagePublisher = messagePublisher ?? throw new ArgumentNullException(nameof(messagePublisher));
-                //_domainEventConverter =
-                //    domainEventConverter ?? throw new ArgumentNullException(nameof(domainEventConverter));
             }
 
             public void HandleEvent(IDomainEvent domainEvent)
