@@ -8,7 +8,7 @@ namespace TauCode.Cqrs.Mq.Tests
         [Test]
         public void CqrsMqTestingDummyTest()
         {
-            Assert.Pass("Added for CI");
+            Assert.Pass("Added for CI.");
         }
     }
 }
